@@ -17,22 +17,21 @@ done
 
 # ANSI colors
 case "$COLOR" in
-  green)   CODE="\e[32m" ;;
-  yellow)  CODE="\e[33m" ;;
-  cyan)    CODE="\e[36m" ;;
-  magenta) CODE="\e[35m" ;;
-  red)     CODE="\e[31m" ;;
-  blue)    CODE="\e[34m" ;;
-  *)       CODE="\e[37m" ;;
+  green)   CODE="\033[32m" ;;
+  yellow)  CODE="\033[33m" ;;
+  cyan)    CODE="\033[36m" ;;
+  magenta) CODE="\033[35m" ;;
+  red)     CODE="\033[31m" ;;
+  blue)    CODE="\033[34m" ;;
+  *)       CODE="\033[37m" ;;
 esac
-RESET="\e[0m"
-BOLD="\e[1m"
+RESET="\033[0m"
+BOLD="\033[1m"
 
 # Terminal banner (50 chars wide)
 BAR=$(printf '═%.0s' {1..48})
-HEAD="${EMOJI}  ${TITLE}"
 printf "${CODE}╔${BAR}╗${RESET}\n"
-printf "${CODE}║${RESET} ${BOLD}%-47s${RESET}${CODE}║${RESET}\n" "$HEAD"
+printf "${CODE}║${RESET} ${BOLD}%s  %-$((45 - ${#TITLE}))s${RESET}${CODE}║${RESET}\n" "$EMOJI" "$TITLE"
 printf "${CODE}║${RESET}  %-46s${CODE}║${RESET}\n" "$BODY"
 printf "${CODE}╚${BAR}╝${RESET}\n"
 
@@ -40,7 +39,9 @@ printf "${CODE}╚${BAR}╝${RESET}\n"
 OS="$(uname -s)"
 case "$OS" in
   Darwin)
-    osascript -e "display notification \"$BODY\" with title \"$EMOJI $TITLE\"" 2>/dev/null
+    SAFE_BODY=$(printf '%s' "$BODY"  | sed 's/\\/\\\\/g; s/"/\\"/g')
+    SAFE_TITLE=$(printf '%s' "$TITLE" | sed 's/\\/\\\\/g; s/"/\\"/g')
+    osascript -e "display notification \"$SAFE_BODY\" with title \"$EMOJI $SAFE_TITLE\"" 2>/dev/null
     case "$SOUND" in
       done)  SF="/System/Library/Sounds/Glass.aiff" ;;
       input) SF="/System/Library/Sounds/Ping.aiff" ;;
