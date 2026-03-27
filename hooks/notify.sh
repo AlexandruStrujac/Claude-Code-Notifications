@@ -61,8 +61,8 @@ case "$OS" in
     esac
     ;;
   MINGW*|MSYS*|CYGWIN*)
-    PS1="$USERPROFILE/.claude/hooks/notify.ps1"
-    [ -f "$PS1" ] && powershell.exe -NonInteractive -File "$PS1" "$EMOJI $TITLE" "$BODY" 2>/dev/null
+    NOTIFY_PS1="$USERPROFILE/.claude/hooks/notify.ps1"
+    [ -f "$NOTIFY_PS1" ] && powershell.exe -NonInteractive -File "$NOTIFY_PS1" "$EMOJI $TITLE" "$BODY" 2>/dev/null
     ;;
 esac
 
