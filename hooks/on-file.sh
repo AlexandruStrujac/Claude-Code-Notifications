@@ -7,9 +7,11 @@ HOOK_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 STDIN=$(cat)
 FILE_PATH=$(printf '%s' "$STDIN" | jq -r '.tool_input.file_path // ""' 2>/dev/null)
 TOOL=$(printf '%s' "$STDIN" | jq -r '.tool_name // "Edit"' 2>/dev/null)
-FILE=$(basename "$FILE_PATH")
-
-[ -z "$FILE" ] && FILE="a file"
+if [ -n "$FILE_PATH" ]; then
+  FILE=$(basename "$FILE_PATH")
+else
+  FILE="a file"
+fi
 [ "$TOOL" = "Write" ] && ACTION="Wrote" || ACTION="Edited"
 
 MESSAGES=(
