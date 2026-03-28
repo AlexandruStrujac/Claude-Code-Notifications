@@ -41,7 +41,7 @@ Every notification also prints a colored box in the Claude terminal:
 ## Install
 
 ```bash
-git clone https://github.com/yourname/claude-notifications.git
+git https://github.com/AlexandruStrujac/Claude-Code-Notifications.git
 cd claude-notifications
 bash install.sh
 ```
