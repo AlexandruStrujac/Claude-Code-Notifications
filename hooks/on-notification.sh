@@ -9,7 +9,7 @@ CLAUDE_MSG=$(printf '%s' "$STDIN" | jq -r '.message // ""' 2>/dev/null | cut -c1
 
 # ── CUSTOMIZE HERE ──────────────────────────────────────
 # Add, remove, or edit messages below.
-# Available variable: ${CLAUDE_MSG}  (Claude's question, up to 60 chars, may be empty)
+# Available variable: $CLAUDE_MSG  (Claude's question, up to 60 chars, may be empty)
 # ────────────────────────────────────────────────────────
 MESSAGES=(
   "I need a decision. Yes, an actual one. From you."
