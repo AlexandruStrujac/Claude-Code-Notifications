@@ -14,6 +14,8 @@ context — filename, command, duration, error — woven into a dry one-liner.
 | `on-file.sh` | File written/edited | 📝 | Magenta | Pop |
 | `on-error.sh` | Tool failure | 💀 | Red | Basso |
 | `on-session-start.sh` | New session | 🤖 | Blue | Hero |
+| `on-subagent-stop.sh` | Subagent finishes | 🤖 | Blue | Hero |
+| `on-pre-compact.sh` | Context compaction | 🧠 | Yellow | Ping |
 
 ## Terminal banner
 
@@ -54,8 +56,8 @@ rm ~/.claude/hooks/on-*.sh
 ```
 
 Then open `~/.claude/settings.json` and delete the `Stop`, `Notification`,
-`SessionStart`, `PostToolUseFailure`, and the Bash/Write|Edit entries under
-`PostToolUse` from the `hooks` object.
+`SessionStart`, `SubagentStop`, `PreCompact`, `PostToolUseFailure`, and the
+Bash/Write|Edit entries under `PostToolUse` from the `hooks` object.
 
 ## Customizing messages
 
