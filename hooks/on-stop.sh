@@ -22,7 +22,7 @@ fi
 
 # ── CUSTOMIZE HERE ──────────────────────────────────────
 # Add, remove, or edit messages below.
-# Available variable: $DUR  (e.g. " in 1m 23s", or empty)
+# Available variable: ${DUR}  (e.g. " in 1m 23s", or empty)
 # ────────────────────────────────────────────────────────
 MESSAGES=(
   "Done${DUR}. Your biological involvement was minimal."
