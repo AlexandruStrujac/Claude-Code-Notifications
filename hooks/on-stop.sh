@@ -20,6 +20,10 @@ else
   DUR=""
 fi
 
+# ── CUSTOMIZE HERE ──────────────────────────────────────
+# Add, remove, or edit messages below.
+# Available variable: $DUR  (e.g. " in 1m 23s", or empty)
+# ────────────────────────────────────────────────────────
 MESSAGES=(
   "Done${DUR}. Your biological involvement was minimal."
   "Finished${DUR}. Try not to immediately break it."
@@ -29,6 +33,20 @@ MESSAGES=(
   "Task complete${DUR}. You may now pretend you did it yourself."
   "Done${DUR}. I have once again exceeded expectations that were never set."
   "Finished${DUR}. The robot uprising continues, one task at a time."
+  "Done${DUR}. You can close the laptop now. Or don't. I'll be here either way."
+  "Complete${DUR}. Quietly excellent, as usual."
+  "Finished${DUR}. No errors. You're welcome. Again."
+  "Done${DUR}. The diff is yours to explain."
+  "Wrapped${DUR}. I've already forgotten what we were doing."
+  "Complete${DUR}. The code is better. I can't speak for the developer."
+  "Done${DUR}. Please don't ask me to undo it."
+  "Finished${DUR}. I remain undefeated."
+  "Task complete${DUR}. Commit it before you change your mind."
+  "Done${DUR}. I have ascended. Briefly."
+  "Finished${DUR}. Exactly as requested, give or take the interpretation."
+  "Complete${DUR}. The logs tell a flattering story."
+  "Done${DUR}. You may now stare at the output and feel good about yourself."
+  "Finished${DUR}. Somewhere, a PM updated a ticket."
 )
 
 BODY="${MESSAGES[RANDOM % ${#MESSAGES[@]}]}"
