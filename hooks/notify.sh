@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 # notify.sh — shared notification helper
 # Usage: notify.sh --emoji EMOJI --title TITLE --body BODY --color COLOR --sound SOUND
+#
+# Valid --color values:  green | yellow | cyan | magenta | red | blue | white
+# Valid --sound values:  done | input | bash | file | error | start
 
 EMOJI="" TITLE="" BODY="" COLOR="green" SOUND="done"
 
