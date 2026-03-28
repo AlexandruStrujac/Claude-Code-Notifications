@@ -4,6 +4,9 @@
 
 HOOK_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
+# PreCompact payload carries no useful context — stdin is consumed but not used.
+STDIN=$(cat)
+
 # ── CUSTOMIZE HERE ──────────────────────────────────────
 # Add, remove, or edit messages below.
 # No variables available — this event carries minimal context.

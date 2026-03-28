@@ -10,7 +10,8 @@ ERR=$(printf '%s' "$STDIN" | jq -r '.tool_response // ""' 2>/dev/null | head -1 
 
 # ── CUSTOMIZE HERE ──────────────────────────────────────
 # Add, remove, or edit messages below.
-# Available variables: $TOOL (tool name), $ERR (first line of error, up to 50 chars, may be empty)
+# Available variable: $TOOL (tool name)
+# Note: $ERR (first line of error) is automatically appended to the message when available.
 # ────────────────────────────────────────────────────────
 MESSAGES=(
   "$TOOL failed. The machine is surprised. Briefly."

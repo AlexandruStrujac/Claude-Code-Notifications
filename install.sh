@@ -29,8 +29,8 @@ cp "$SCRIPT_DIR/hooks/on-bash.sh"           "$HOOKS_DIR/on-bash.sh"
 cp "$SCRIPT_DIR/hooks/on-file.sh"           "$HOOKS_DIR/on-file.sh"
 cp "$SCRIPT_DIR/hooks/on-error.sh"          "$HOOKS_DIR/on-error.sh"
 cp "$SCRIPT_DIR/hooks/on-session-start.sh"  "$HOOKS_DIR/on-session-start.sh"
-cp "$SCRIPT_DIR/hooks/on-subagent-stop.sh" "$HOOKS_DIR/on-subagent-stop.sh"
-cp "$SCRIPT_DIR/hooks/on-pre-compact.sh"   "$HOOKS_DIR/on-pre-compact.sh"
+cp "$SCRIPT_DIR/hooks/on-subagent-stop.sh"  "$HOOKS_DIR/on-subagent-stop.sh"
+cp "$SCRIPT_DIR/hooks/on-pre-compact.sh"    "$HOOKS_DIR/on-pre-compact.sh"
 chmod +x "$HOOKS_DIR"/*.sh
 echo "  Copied scripts to $HOOKS_DIR"
 

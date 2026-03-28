@@ -44,6 +44,6 @@ bash "$HOOK_DIR/notify.sh" \
   --title "Subagent done" \
   --body "$BODY" \
   --color blue \
-  --sound start
+  --sound done
 
 exit 0

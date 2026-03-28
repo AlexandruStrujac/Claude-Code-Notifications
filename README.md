@@ -61,8 +61,9 @@ Bash/Write|Edit entries under `PostToolUse` from the `hooks` object.
 
 ## Customizing messages
 
-Each `on-*.sh` script has a `MESSAGES=(...)` array at the top. Edit freely —
-one entry is picked at random each time the hook fires.
+Each `on-*.sh` script has a `MESSAGES=(...)` array. Above it is a comment block
+that lists the variables available in that hook (e.g. `$CMD`, `$FILE`, `$TOOL`).
+Edit freely — one entry is picked at random each time the hook fires.
 
 ## How it works
 
